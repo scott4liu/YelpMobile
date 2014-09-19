@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7AB005B619CBFF2F00DFFC59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */; };
+		7AB005B819CBFF2F00DFFC59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB005B719CBFF2F00DFFC59 /* ViewController.swift */; };
+		7AB005BB19CBFF2F00DFFC59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB005B919CBFF2F00DFFC59 /* Main.storyboard */; };
+		7AB005BD19CBFF2F00DFFC59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB005BC19CBFF2F00DFFC59 /* Images.xcassets */; };
+		7AB005C019CBFF2F00DFFC59 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB005BE19CBFF2F00DFFC59 /* LaunchScreen.xib */; };
+		7AB005CC19CBFF2F00DFFC59 /* YelpMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB005CB19CBFF2F00DFFC59 /* YelpMobileTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AB005C619CBFF2F00DFFC59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7AB005A819CBFF2F00DFFC59 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7AB005AF19CBFF2F00DFFC59;
+			remoteInfo = YelpMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7AB005B019CBFF2F00DFFC59 /* YelpMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AB005B419CBFF2F00DFFC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7AB005B719CBFF2F00DFFC59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7AB005BA19CBFF2F00DFFC59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7AB005BC19CBFF2F00DFFC59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7AB005BF19CBFF2F00DFFC59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7AB005C519CBFF2F00DFFC59 /* YelpMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YelpMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AB005CA19CBFF2F00DFFC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AB005CB19CBFF2F00DFFC59 /* YelpMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpMobileTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7AB005AD19CBFF2F00DFFC59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AB005C219CBFF2F00DFFC59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7AB005A719CBFF2F00DFFC59 = {
+			isa = PBXGroup;
+			children = (
+				7AB005B219CBFF2F00DFFC59 /* YelpMobile */,
+				7AB005C819CBFF2F00DFFC59 /* YelpMobileTests */,
+				7AB005B119CBFF2F00DFFC59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7AB005B119CBFF2F00DFFC59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7AB005B019CBFF2F00DFFC59 /* YelpMobile.app */,
+				7AB005C519CBFF2F00DFFC59 /* YelpMobileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7AB005B219CBFF2F00DFFC59 /* YelpMobile */ = {
+			isa = PBXGroup;
+			children = (
+				7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */,
+				7AB005B719CBFF2F00DFFC59 /* ViewController.swift */,
+				7AB005B919CBFF2F00DFFC59 /* Main.storyboard */,
+				7AB005BC19CBFF2F00DFFC59 /* Images.xcassets */,
+				7AB005BE19CBFF2F00DFFC59 /* LaunchScreen.xib */,
+				7AB005B319CBFF2F00DFFC59 /* Supporting Files */,
+			);
+			path = YelpMobile;
+			sourceTree = "<group>";
+		};
+		7AB005B319CBFF2F00DFFC59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7AB005B419CBFF2F00DFFC59 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7AB005C819CBFF2F00DFFC59 /* YelpMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				7AB005CB19CBFF2F00DFFC59 /* YelpMobileTests.swift */,
+				7AB005C919CBFF2F00DFFC59 /* Supporting Files */,
+			);
+			path = YelpMobileTests;
+			sourceTree = "<group>";
+		};
+		7AB005C919CBFF2F00DFFC59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7AB005CA19CBFF2F00DFFC59 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7AB005AF19CBFF2F00DFFC59 /* YelpMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AB005CF19CBFF2F00DFFC59 /* Build configuration list for PBXNativeTarget "YelpMobile" */;
+			buildPhases = (
+				7AB005AC19CBFF2F00DFFC59 /* Sources */,
+				7AB005AD19CBFF2F00DFFC59 /* Frameworks */,
+				7AB005AE19CBFF2F00DFFC59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YelpMobile;
+			productName = YelpMobile;
+			productReference = 7AB005B019CBFF2F00DFFC59 /* YelpMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7AB005C419CBFF2F00DFFC59 /* YelpMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AB005D219CBFF2F00DFFC59 /* Build configuration list for PBXNativeTarget "YelpMobileTests" */;
+			buildPhases = (
+				7AB005C119CBFF2F00DFFC59 /* Sources */,
+				7AB005C219CBFF2F00DFFC59 /* Frameworks */,
+				7AB005C319CBFF2F00DFFC59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AB005C719CBFF2F00DFFC59 /* PBXTargetDependency */,
+			);
+			name = YelpMobileTests;
+			productName = YelpMobileTests;
+			productReference = 7AB005C519CBFF2F00DFFC59 /* YelpMobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7AB005A819CBFF2F00DFFC59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Scott;
+				TargetAttributes = {
+					7AB005AF19CBFF2F00DFFC59 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					7AB005C419CBFF2F00DFFC59 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 7AB005AF19CBFF2F00DFFC59;
+					};
+				};
+			};
+			buildConfigurationList = 7AB005AB19CBFF2F00DFFC59 /* Build configuration list for PBXProject "YelpMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7AB005A719CBFF2F00DFFC59;
+			productRefGroup = 7AB005B119CBFF2F00DFFC59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7AB005AF19CBFF2F00DFFC59 /* YelpMobile */,
+				7AB005C419CBFF2F00DFFC59 /* YelpMobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7AB005AE19CBFF2F00DFFC59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AB005BB19CBFF2F00DFFC59 /* Main.storyboard in Resources */,
+				7AB005C019CBFF2F00DFFC59 /* LaunchScreen.xib in Resources */,
+				7AB005BD19CBFF2F00DFFC59 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AB005C319CBFF2F00DFFC59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7AB005AC19CBFF2F00DFFC59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AB005B819CBFF2F00DFFC59 /* ViewController.swift in Sources */,
+				7AB005B619CBFF2F00DFFC59 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7AB005C119CBFF2F00DFFC59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AB005CC19CBFF2F00DFFC59 /* YelpMobileTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7AB005C719CBFF2F00DFFC59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7AB005AF19CBFF2F00DFFC59 /* YelpMobile */;
+			targetProxy = 7AB005C619CBFF2F00DFFC59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7AB005B919CBFF2F00DFFC59 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AB005BA19CBFF2F00DFFC59 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7AB005BE19CBFF2F00DFFC59 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AB005BF19CBFF2F00DFFC59 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7AB005CD19CBFF2F00DFFC59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7AB005CE19CBFF2F00DFFC59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7AB005D019CBFF2F00DFFC59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YelpMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7AB005D119CBFF2F00DFFC59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YelpMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7AB005D319CBFF2F00DFFC59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = YelpMobileTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YelpMobile.app/YelpMobile";
+			};
+			name = Debug;
+		};
+		7AB005D419CBFF2F00DFFC59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = YelpMobileTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YelpMobile.app/YelpMobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7AB005AB19CBFF2F00DFFC59 /* Build configuration list for PBXProject "YelpMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AB005CD19CBFF2F00DFFC59 /* Debug */,
+				7AB005CE19CBFF2F00DFFC59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7AB005CF19CBFF2F00DFFC59 /* Build configuration list for PBXNativeTarget "YelpMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AB005D019CBFF2F00DFFC59 /* Debug */,
+				7AB005D119CBFF2F00DFFC59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7AB005D219CBFF2F00DFFC59 /* Build configuration list for PBXNativeTarget "YelpMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AB005D319CBFF2F00DFFC59 /* Debug */,
+				7AB005D419CBFF2F00DFFC59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7AB005A819CBFF2F00DFFC59 /* Project object */;
+}
