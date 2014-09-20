@@ -17,21 +17,40 @@ let kYelpTokenSecret = "mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 let client = YelpClient(consumerKey: kYelpConsumerKey, consumerSecret: kYelpConsumerSecret, accessToken: kYelpToken, accessSecret: kYelpTokenSecret)
 
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     var bizArray : NSArray?
 
+    @IBOutlet weak var searchTextField: UITextField!
+    
     @IBOutlet weak var yelpTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        searchYelp()
+        
+        customizeSearchTextFld()
+        
+        searchYelp("resturant")
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func customizeSearchTextFld()
+    {
+        let searchIconView = UIImageView(image: UIImage(named: "searchIcon2.png"));
+        searchIconView.frame = CGRectMake(0, 0, 15, 15);
+        searchIconView.contentMode = UIViewContentMode.ScaleAspectFit;
+        
+        self.searchTextField.leftView = searchIconView;
+        self.searchTextField.leftViewMode=UITextFieldViewMode.Always;
+
+    }
+
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        NSLog("didSelectRowAtIndexPath")
+        
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,8 +73,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let image_url = business["image_url"] as NSString
             let rating_img_url_small = business["rating_img_url_small"] as NSString
             
+            
+            
+            let layer = cell.bizImageView.layer;
+            layer.masksToBounds=true
+            layer.cornerRadius=10.0
+
             cell.bizImageView.setImageWithURL(NSURL(string: image_url))
             cell.ratingImgView.setImageWithURL(NSURL(string: rating_img_url_small))
+            
+            
             
             if let location = business["location"] as? NSDictionary {
                 let addr = location["address"] as NSArray
@@ -89,11 +116,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
 
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        searchYelp(textField.text)
+        return true
+    }
     
+    @IBAction func onTab(sender: AnyObject) {
+        self.searchTextField.endEditing(true)
+    }
     
-    func searchYelp()
+    func searchYelp(searchTerm: String)
     {
-        client.searchWithTerm("Thai", success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+        client.searchWithTerm(searchTerm, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             
             //println(response)
             
@@ -107,6 +143,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 NSLog("error: "+error.description);
         }
+        
+
     }
     
 

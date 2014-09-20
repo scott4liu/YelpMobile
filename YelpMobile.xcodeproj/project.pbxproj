@@ -10,6 +10,8 @@
 		5E10BCB4EC0E45C9AA36F874 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D42A82C3574E42BF32292D /* libPods.a */; };
 		7A1D257019CC04A6003580F0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D256F19CC04A6003580F0 /* Default-568h@2x.png */; };
 		7A1D257219CC0618003580F0 /* YelpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1D257119CC0618003580F0 /* YelpTableViewCell.swift */; };
+		7A26E7BF19CDE4A60038B993 /* searchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A26E7BE19CDE4A60038B993 /* searchIcon.png */; };
+		7A26E7C119CDE6880038B993 /* searchIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A26E7C019CDE6880038B993 /* searchIcon2.png */; };
 		7AB005B619CBFF2F00DFFC59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */; };
 		7AB005B819CBFF2F00DFFC59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB005B719CBFF2F00DFFC59 /* ViewController.swift */; };
 		7AB005BB19CBFF2F00DFFC59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB005B919CBFF2F00DFFC59 /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		7A1D256F19CC04A6003580F0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7A1D257119CC0618003580F0 /* YelpTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpTableViewCell.swift; sourceTree = "<group>"; };
+		7A26E7BE19CDE4A60038B993 /* searchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchIcon.png; sourceTree = "<group>"; };
+		7A26E7C019CDE6880038B993 /* searchIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchIcon2.png; sourceTree = "<group>"; };
 		7AB005B019CBFF2F00DFFC59 /* YelpMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB005B419CBFF2F00DFFC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		7AB005B319CBFF2F00DFFC59 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7A26E7C019CDE6880038B993 /* searchIcon2.png */,
+				7A26E7BE19CDE4A60038B993 /* searchIcon.png */,
 				7A1D256F19CC04A6003580F0 /* Default-568h@2x.png */,
 				7AB005B419CBFF2F00DFFC59 /* Info.plist */,
 			);
@@ -230,9 +236,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB005BB19CBFF2F00DFFC59 /* Main.storyboard in Resources */,
+				7A26E7C119CDE6880038B993 /* searchIcon2.png in Resources */,
 				7A1D257019CC04A6003580F0 /* Default-568h@2x.png in Resources */,
 				7AB005C019CBFF2F00DFFC59 /* LaunchScreen.xib in Resources */,
 				7AB005BD19CBFF2F00DFFC59 /* Images.xcassets in Resources */,
+				7A26E7BF19CDE4A60038B993 /* searchIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
