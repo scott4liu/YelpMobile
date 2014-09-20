@@ -14,7 +14,7 @@ let kYelpConsumerSecret = "33QCvh5bIF5jIHR5klQr7RtBDhQ";
 let kYelpToken = "uRcRswHFYa1VkDrGV6LAW2F8clGh5JHV";
 let kYelpTokenSecret = "mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 
-let client = YelpClient(consumerKey: kYelpConsumerKey, consumerSecret: kYelpConsumerSecret, accessToken: kYelpToken, accessSecret: kYelpTokenSecret)
+let client = YelpAPIClient(consumerKey: kYelpConsumerKey, consumerSecret: kYelpConsumerSecret, accessToken: kYelpToken, accessSecret: kYelpTokenSecret)
 
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         customizeSearchTextFld()
         
-        searchYelp("resturant")
+        searchYelp("Thai")
         
     }
 
@@ -68,7 +68,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if self.bizArray != nil {
             
-            let business = self.bizArray![indexPath.row] as NSDictionary
+          if let business = self.bizArray?[indexPath.row] as? NSDictionary {
+            
+            //println(business)
+            //println(indexPath.row)
+            
             cell.nameLabel.text = business["name"] as NSString
             let image_url = business["image_url"] as NSString
             let rating_img_url_small = business["rating_img_url_small"] as NSString
@@ -85,9 +89,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             
             if let location = business["location"] as? NSDictionary {
-                let addr = location["address"] as NSArray
+                if let addr = location["address"] as? NSArray? {
                     
-                cell.addressLabel.text = addr[0] as NSString +  ", " + (location["city"] as NSString)
+                    if addr!.count > 0 {
+                        cell.addressLabel.text = (addr![0] as NSString) +  ", " + (location["city"] as NSString)
+                    } else {
+                        cell.addressLabel.text = location["city"] as NSString
+                    }
+                }
             }
             
             let review_count = String(business["review_count"] as NSInteger)
@@ -97,20 +106,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             var str : String?
             for category in categories {
-                let catArray = category as NSArray
-                let cname = catArray[0] as NSString
-                if str != nil {
-                    str = str! + ", " + cname
-                }
-                else {
-                    str = cname
+                if let catArray = category as? NSArray {
+                    let cname = catArray[0] as NSString
+                    if str != nil {
+                        str = str! + ", " + cname
+                    }
+                    else {
+                        str = cname
+                    }
                 }
                 
             }
             
             
             cell.categoryLabel.text = str
-            
+          }
         }
         
         return cell
@@ -129,22 +139,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func searchYelp(searchTerm: String)
     {
-        client.searchWithTerm(searchTerm, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            
-            //println(response)
-            
-            let data = response as Dictionary<String, AnyObject>
-            self.bizArray = data["businesses"] as? NSArray
-            
-            self.yelpTableView.reloadData()
-            
-            //println(self.bizArray![0])
-            
+        let category = "restaurants"
+        let sort = SORT_MODE.HIGHEST_RATED.toRaw()
+        let deals = DEAL_FILTER.NO.toRaw()
+        
+        client.searchWithTerm(searchTerm,
+            category_filter: category,
+            sort_mode: sort,
+            deals_filter: deals,
+            success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                let data = response as Dictionary<String, AnyObject>
+                self.bizArray = data["businesses"] as? NSArray
+                
+                self.yelpTableView.reloadData()
             }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 NSLog("error: "+error.description);
         }
         
-
     }
     
 
