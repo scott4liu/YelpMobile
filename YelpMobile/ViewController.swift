@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 let kYelpConsumerKey = "vxKwwcR_NMQ7WaEiQBK_CA";
 let kYelpConsumerSecret = "33QCvh5bIF5jIHR5klQr7RtBDhQ";
 let kYelpToken = "uRcRswHFYa1VkDrGV6LAW2F8clGh5JHV";
@@ -50,6 +51,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let business = self.bizArray![indexPath.row] as NSDictionary
             cell.nameLabel.text = business["name"] as NSString
+            let image_url = business["image_url"] as NSString
+            let rating_img_url_small = business["rating_img_url_small"] as NSString
+            
+            cell.bizImageView.setImageWithURL(NSURL(string: image_url))
+            cell.ratingImgView.setImageWithURL(NSURL(string: rating_img_url_small))
+            
+            if let location = business["location"] as? NSDictionary {
+                let addr = location["address"] as NSArray
+                    
+                cell.addressLabel.text = addr[0] as NSString +  ", " + (location["city"] as NSString)
+            }
+            
+            let review_count = String(business["review_count"] as NSInteger)
+            cell.reviewsLabel.text = review_count + " Reviews"
+            
+            let categories = business["categories"] as NSArray
+            
+            var str : String?
+            for category in categories {
+                let catArray = category as NSArray
+                let cname = catArray[0] as NSString
+                if str != nil {
+                    str = str! + ", " + cname
+                }
+                else {
+                    str = cname
+                }
+                
+            }
+            
+            
+            cell.categoryLabel.text = str
+            
         }
         
         return cell
@@ -68,7 +102,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             self.yelpTableView.reloadData()
             
-            println(self.bizArray![0])
+            //println(self.bizArray![0])
             
             }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 NSLog("error: "+error.description);

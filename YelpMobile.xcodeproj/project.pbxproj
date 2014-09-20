@@ -68,6 +68,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A1D257319CCAF8F003580F0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7AB005D719CC00C200DFFC59 /* YelpClient.m */,
+				7AB005D619CC00C100DFFC59 /* YelpMobile-Bridging-Header.h */,
+				7AB005D519CC00AC00DFFC59 /* YelpClient.h */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		7AB005A719CBFF2F00DFFC59 = {
 			isa = PBXGroup;
 			children = (
@@ -91,8 +101,7 @@
 		7AB005B219CBFF2F00DFFC59 /* YelpMobile */ = {
 			isa = PBXGroup;
 			children = (
-				7AB005D719CC00C200DFFC59 /* YelpClient.m */,
-				7AB005D519CC00AC00DFFC59 /* YelpClient.h */,
+				7A1D257319CCAF8F003580F0 /* API */,
 				7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */,
 				7AB005B719CBFF2F00DFFC59 /* ViewController.swift */,
 				7AB005B919CBFF2F00DFFC59 /* Main.storyboard */,
@@ -100,7 +109,6 @@
 				7AB005BC19CBFF2F00DFFC59 /* Images.xcassets */,
 				7AB005BE19CBFF2F00DFFC59 /* LaunchScreen.xib */,
 				7AB005B319CBFF2F00DFFC59 /* Supporting Files */,
-				7AB005D619CC00C100DFFC59 /* YelpMobile-Bridging-Header.h */,
 			);
 			path = YelpMobile;
 			sourceTree = "<group>";
