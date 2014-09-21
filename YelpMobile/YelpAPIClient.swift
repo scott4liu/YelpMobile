@@ -6,19 +6,6 @@
 //  Copyright (c) 2014 Scott. All rights reserved.
 //
 
-
-enum SORT_MODE: Int {
-    case BEST_MATCHED = 0
-    case DISTANCE = 1
-    case HIGHEST_RATED = 2
-}
-
-enum DEAL_FILTER: Int {
-    case YES = 1
-    case NO = 0
-}
-
-
 class YelpAPIClient: BDBOAuth1RequestOperationManager {
     
     var accessToken: String!
@@ -38,17 +25,18 @@ class YelpAPIClient: BDBOAuth1RequestOperationManager {
         self.requestSerializer.saveAccessToken(token)
     }
     
-    func searchWithTerm(term: String, category_filter: String, sort_mode: Int, deals_filter: Int,
+    func searchWithTerm(term: String, category_filter: String, sort_mode: Int, deals_filter: Int, radius_meters: Int, location: String,
         success: (AFHTTPRequestOperation!, AnyObject!) -> Void,
         failure: (AFHTTPRequestOperation!, NSError!) -> Void) -> AFHTTPRequestOperation! {
         // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
             
         var parameters = [
             "term": term,
-            "location": "San Francisco"
+            "location": location
            , "category_filter": category_filter
            , "sort": sort_mode
            , "deals_filter": deals_filter
+           , "radius_filter" : radius_meters
             ]
         return self.GET("search", parameters: parameters, success: success, failure: failure)
     }

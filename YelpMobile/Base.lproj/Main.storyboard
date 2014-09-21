@@ -146,7 +146,7 @@
                         </textField>
                         <barButtonItem key="rightBarButtonItem" title="Map" id="BL1-Ng-ZRn">
                             <connections>
-                                <segue destination="MRw-k7-39F" kind="show" id="YvV-rl-hMd"/>
+                                <segue destination="MRw-k7-39F" kind="show" identifier="SegueListToMap" id="YvV-rl-hMd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

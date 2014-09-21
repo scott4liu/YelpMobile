@@ -152,11 +152,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let category = "restaurants"
         let sort = SORT_MODE.HIGHEST_RATED.toRaw()
         let deals = DEAL_FILTER.NO.toRaw()
+        let location = "San Francisco"
+        let radius_meters = 20000
         
         client.searchWithTerm(self.searchTextField.text,
             category_filter: category,
             sort_mode: sort,
             deals_filter: deals,
+            radius_meters: radius_meters,
+            location: location,
             success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                 let data = response as Dictionary<String, AnyObject>
                 self.bizArray = data["businesses"] as? NSArray

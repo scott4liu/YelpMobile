@@ -15,6 +15,7 @@
 		7A26E7C519CE326E0038B993 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A26E7C419CE326E0038B993 /* FilterViewController.swift */; };
 		7A26E7C719CEB61E0038B993 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A26E7C619CEB61E0038B993 /* MapKit.framework */; };
 		7A26E7C919CEB69D0038B993 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A26E7C819CEB69D0038B993 /* MapViewController.swift */; };
+		7A26E7CD19CF39330038B993 /* YelpFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A26E7CC19CF39330038B993 /* YelpFilter.swift */; };
 		7AB005B619CBFF2F00DFFC59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */; };
 		7AB005B819CBFF2F00DFFC59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB005B719CBFF2F00DFFC59 /* ViewController.swift */; };
 		7AB005BB19CBFF2F00DFFC59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB005B919CBFF2F00DFFC59 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		7A26E7C419CE326E0038B993 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		7A26E7C619CEB61E0038B993 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7A26E7C819CEB69D0038B993 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7A26E7CC19CF39330038B993 /* YelpFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpFilter.swift; sourceTree = "<group>"; };
 		7AB005B019CBFF2F00DFFC59 /* YelpMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB005B419CBFF2F00DFFC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,24 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		7A26E7CA19CF384E0038B993 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A26E7C819CEB69D0038B993 /* MapViewController.swift */,
+				7A26E7C419CE326E0038B993 /* FilterViewController.swift */,
+				7AB005B719CBFF2F00DFFC59 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7A26E7CB19CF388A0038B993 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A1D257119CC0618003580F0 /* YelpTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		7AB005A719CBFF2F00DFFC59 = {
 			isa = PBXGroup;
 			children = (
@@ -108,16 +128,15 @@
 		7AB005B219CBFF2F00DFFC59 /* YelpMobile */ = {
 			isa = PBXGroup;
 			children = (
+				7A26E7CB19CF388A0038B993 /* View */,
+				7A26E7CA19CF384E0038B993 /* Controller */,
 				7A1D257319CCAF8F003580F0 /* API */,
 				7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */,
-				7AB005B719CBFF2F00DFFC59 /* ViewController.swift */,
 				7AB005B919CBFF2F00DFFC59 /* Main.storyboard */,
-				7A26E7C819CEB69D0038B993 /* MapViewController.swift */,
-				7A26E7C419CE326E0038B993 /* FilterViewController.swift */,
-				7A1D257119CC0618003580F0 /* YelpTableViewCell.swift */,
 				7AB005BC19CBFF2F00DFFC59 /* Images.xcassets */,
 				7AB005BE19CBFF2F00DFFC59 /* LaunchScreen.xib */,
 				7AB005B319CBFF2F00DFFC59 /* Supporting Files */,
+				7A26E7CC19CF39330038B993 /* YelpFilter.swift */,
 			);
 			path = YelpMobile;
 			sourceTree = "<group>";
@@ -297,6 +316,7 @@
 			files = (
 				7AB005B819CBFF2F00DFFC59 /* ViewController.swift in Sources */,
 				7A26E7C919CEB69D0038B993 /* MapViewController.swift in Sources */,
+				7A26E7CD19CF39330038B993 /* YelpFilter.swift in Sources */,
 				7AB005B619CBFF2F00DFFC59 /* AppDelegate.swift in Sources */,
 				7A1D257219CC0618003580F0 /* YelpTableViewCell.swift in Sources */,
 				7A26E7C319CE0BA50038B993 /* YelpAPIClient.swift in Sources */,
