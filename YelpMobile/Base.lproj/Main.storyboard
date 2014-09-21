@@ -132,7 +132,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="XzG-mV-Buj">
                             <connections>
-                                <segue destination="JDc-Wl-mB0" kind="show" id="ef2-W5-K98"/>
+                                <segue destination="JDc-Wl-mB0" kind="show" identifier="SegueListToFilter" id="ef2-W5-K98"/>
                             </connections>
                         </barButtonItem>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="12" clearButtonMode="always" id="OpA-Kc-Qmh">
@@ -250,12 +250,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNX-Wo-VNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="-1572"/>
+            <point key="canvasLocation" x="953" y="-1581"/>
         </scene>
         <!--Map-->
         <scene sceneID="PpT-Bg-WTe">
             <objects>
-                <viewController title="Map" id="MRw-k7-39F" sceneMemberID="viewController">
+                <viewController title="Map" id="MRw-k7-39F" customClass="MapViewController" customModule="YelpMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bx0-rv-40d"/>
                         <viewControllerLayoutGuide type="bottom" id="OMF-lx-hfn"/>
@@ -264,16 +264,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I am Map view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ar-yk-PSE">
-                                <rect key="frame" x="81" y="226" width="112" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="anS-8a-bdF">
+                                <rect key="frame" x="0.0" y="72" width="328" height="451"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MRw-k7-39F" id="e2S-xL-H1Z"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="mapView" destination="anS-8a-bdF" id="XK2-9p-xd4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOr-av-gwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

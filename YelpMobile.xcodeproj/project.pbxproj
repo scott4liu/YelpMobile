@@ -13,6 +13,8 @@
 		7A26E7C119CDE6880038B993 /* searchIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A26E7C019CDE6880038B993 /* searchIcon2.png */; };
 		7A26E7C319CE0BA50038B993 /* YelpAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A26E7C219CE0BA50038B993 /* YelpAPIClient.swift */; };
 		7A26E7C519CE326E0038B993 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A26E7C419CE326E0038B993 /* FilterViewController.swift */; };
+		7A26E7C719CEB61E0038B993 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A26E7C619CEB61E0038B993 /* MapKit.framework */; };
+		7A26E7C919CEB69D0038B993 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A26E7C819CEB69D0038B993 /* MapViewController.swift */; };
 		7AB005B619CBFF2F00DFFC59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */; };
 		7AB005B819CBFF2F00DFFC59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB005B719CBFF2F00DFFC59 /* ViewController.swift */; };
 		7AB005BB19CBFF2F00DFFC59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB005B919CBFF2F00DFFC59 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		7A26E7C019CDE6880038B993 /* searchIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchIcon2.png; sourceTree = "<group>"; };
 		7A26E7C219CE0BA50038B993 /* YelpAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPIClient.swift; sourceTree = "<group>"; };
 		7A26E7C419CE326E0038B993 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		7A26E7C619CEB61E0038B993 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		7A26E7C819CEB69D0038B993 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7AB005B019CBFF2F00DFFC59 /* YelpMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB005B419CBFF2F00DFFC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A26E7C719CEB61E0038B993 /* MapKit.framework in Frameworks */,
 				5E10BCB4EC0E45C9AA36F874 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +112,7 @@
 				7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */,
 				7AB005B719CBFF2F00DFFC59 /* ViewController.swift */,
 				7AB005B919CBFF2F00DFFC59 /* Main.storyboard */,
+				7A26E7C819CEB69D0038B993 /* MapViewController.swift */,
 				7A26E7C419CE326E0038B993 /* FilterViewController.swift */,
 				7A1D257119CC0618003580F0 /* YelpTableViewCell.swift */,
 				7AB005BC19CBFF2F00DFFC59 /* Images.xcassets */,
@@ -146,6 +152,7 @@
 		8B7453C9667148EA84F6BE01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A26E7C619CEB61E0038B993 /* MapKit.framework */,
 				D6D42A82C3574E42BF32292D /* libPods.a */,
 			);
 			name = Frameworks;
@@ -289,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB005B819CBFF2F00DFFC59 /* ViewController.swift in Sources */,
+				7A26E7C919CEB69D0038B993 /* MapViewController.swift in Sources */,
 				7AB005B619CBFF2F00DFFC59 /* AppDelegate.swift in Sources */,
 				7A1D257219CC0618003580F0 /* YelpTableViewCell.swift in Sources */,
 				7A26E7C319CE0BA50038B993 /* YelpAPIClient.swift in Sources */,

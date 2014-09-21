@@ -20,12 +20,13 @@ var filter_sort_index = 0
 var filter_distance = 10.0
 var filter_deals = 0
 
-var filter_changed : Bool?
 
+protocol FilterViewControllerDelegate {
+    func applyFilter()
+}
 
 class FilterViewController: UIViewController {
     
- 
     
     let categories = ["restaurants", "bars"]
     let subcategories: Array<Array<String>> = [
@@ -37,7 +38,8 @@ class FilterViewController: UIViewController {
         ["Brazilian", "British", "Cambodian", "Caribbean", "Chinese", "French", "Italian", "Japanese"],
         ["Beer bar", "Cocktail Bars", "Sports Bars", "Wine Bars"]
     ]
-
+    
+    var filterDelegate : FilterViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,16 +47,15 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func searchClicked(sender: AnyObject) {
-        //NSLog("click Search")
-        
-        filter_changed = true
+      
+        filterDelegate?.applyFilter()
         
         self.navigationController?.popToRootViewControllerAnimated(true)
         
     }
     
     @IBAction func cancelFilterChanges(sender: AnyObject) {
-        filter_changed = false
+        
         self.navigationController?.popToRootViewControllerAnimated(true)    }
 
  

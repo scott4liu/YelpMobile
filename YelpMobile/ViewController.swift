@@ -17,7 +17,7 @@ let kYelpTokenSecret = "mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 let client = YelpAPIClient(consumerKey: kYelpConsumerKey, consumerSecret: kYelpConsumerSecret, accessToken: kYelpToken, accessSecret: kYelpTokenSecret)
 
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, FilterViewControllerDelegate {
     
     var bizArray : NSArray?
 
@@ -30,9 +30,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         customizeSearchTextFld()
         
-        
+        searchYelp()
     }
     
+    /*
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -40,6 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             searchYelp()
         }
     }
+    */
 
     func customizeSearchTextFld()
     {
@@ -166,6 +168,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SegueListToFilter" {
+            let filterController = segue.destinationViewController as FilterViewController
+            filterController.filterDelegate = self;
+        }
+    }
+    
+    func applyFilter(){
+        searchYelp()
+    }
 
 
 }
