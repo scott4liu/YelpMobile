@@ -4,5 +4,6 @@
 
 #import <AFNetworking/AFNetworking.h>
 #import "UIImageView+AFNetworking.h"
-#import "YelpClient.h"
+#import "BDBOAuth1RequestOperationManager.h"
+
 

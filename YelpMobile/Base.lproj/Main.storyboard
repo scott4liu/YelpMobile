@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="YelpMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" id="vXZ-lx-hvc" customClass="ViewController" customModule="YelpMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -107,7 +107,6 @@
                                             <outlet property="nameLabel" destination="C8y-Zt-9LE" id="Ho4-p0-SQM"/>
                                             <outlet property="ratingImgView" destination="RwU-Bj-TzG" id="dg6-XR-U6c"/>
                                             <outlet property="reviewsLabel" destination="CbD-4v-lpp" id="frJ-9X-tHp"/>
-                                            <segue destination="BN1-ox-hWw" kind="show" id="Xdh-HY-Qr2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -164,12 +163,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="545" y="-966"/>
+            <point key="canvasLocation" x="545" y="-1572"/>
         </scene>
-        <!--View Controller-->
+        <!--Filters-->
         <scene sceneID="8af-cD-dT6">
             <objects>
-                <viewController id="JDc-Wl-mB0" sceneMemberID="viewController">
+                <viewController title="Filters" id="JDc-Wl-mB0" customClass="FilterViewController" customModule="YelpMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rZM-lz-vQ7"/>
                         <viewControllerLayoutGuide type="bottom" id="nAQ-qO-oTH"/>
@@ -177,37 +176,86 @@
                     <view key="view" contentMode="scaleToFill" id="vbV-h4-DSS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Categories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bs-Ql-bkT">
+                                <rect key="frame" x="118" y="78" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sort" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlt-IV-cyf">
+                                <rect key="frame" x="144" y="301" width="33" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZZq-eH-WgB">
+                                <rect key="frame" x="16" y="252" width="288" height="29"/>
+                                <segments>
+                                    <segment title="Deals On"/>
+                                    <segment title="Deals Off"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="n4a-HP-7H4">
+                                <rect key="frame" x="16" y="325" width="288" height="29"/>
+                                <segments>
+                                    <segment title="Best Matches"/>
+                                    <segment title="Distance"/>
+                                    <segment title="Highest Rated"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAp-vp-Aso">
+                                <rect key="frame" x="127" y="377" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="5zY-sb-v5P">
+                                <rect key="frame" x="14" y="411" width="292" height="31"/>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="     Filters    " id="7rs-vd-r2z">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="f59-mf-8U2">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ihx-jp-67g">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelFilterChanges:" destination="JDc-Wl-mB0" eventType="touchDown" id="m5u-OQ-zg3"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Eqf-Dx-h7o">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BYt-78-5FW">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchClicked:" destination="JDc-Wl-mB0" eventType="touchDown" id="IPC-J1-5yh"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNX-Wo-VNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="-1575"/>
+            <point key="canvasLocation" x="951" y="-1572"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="d7z-nB-vA5">
-            <objects>
-                <viewController id="BN1-ox-hWw" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0iV-sr-XcQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="nIg-oC-xh1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5uk-NO-jcK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rrF-Vi-pYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="960" y="-570"/>
-        </scene>
-        <!--View Controller-->
+        <!--Map-->
         <scene sceneID="PpT-Bg-WTe">
             <objects>
-                <viewController id="MRw-k7-39F" sceneMemberID="viewController">
+                <viewController title="Map" id="MRw-k7-39F" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bx0-rv-40d"/>
                         <viewControllerLayoutGuide type="bottom" id="OMF-lx-hfn"/>
@@ -215,13 +263,21 @@
                     <view key="view" contentMode="scaleToFill" id="WJT-Ib-rBK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I am Map view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ar-yk-PSE">
+                                <rect key="frame" x="81" y="226" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WOr-av-gwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="-747"/>
+            <point key="canvasLocation" x="545" y="-821"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g2D-d6-5TU">
@@ -240,7 +296,8 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycj-3E-J2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="552" y="-1741"/>
+            <point key="canvasLocation" x="136" y="-1572"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.68091881793478259" green="0.40576097601179723" blue="0.083886477903364509" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -28,11 +28,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
         customizeSearchTextFld()
         
-        searchYelp("Thai")
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (filter_changed == nil || filter_changed == true) {
+            searchYelp()
+        }
     }
 
     func customizeSearchTextFld()
@@ -46,12 +52,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
 
-    
+    /*
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         NSLog("didSelectRowAtIndexPath")
-        
-        
     }
+    */
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -129,7 +134,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.endEditing(true)
-        searchYelp(textField.text)
+        searchYelp()
         return true
     }
     
@@ -137,13 +142,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.searchTextField.endEditing(true)
     }
     
-    func searchYelp(searchTerm: String)
+    func searchYelp()
     {
+        
+        NSLog("start search")
+        
         let category = "restaurants"
         let sort = SORT_MODE.HIGHEST_RATED.toRaw()
         let deals = DEAL_FILTER.NO.toRaw()
         
-        client.searchWithTerm(searchTerm,
+        client.searchWithTerm(self.searchTextField.text,
             category_filter: category,
             sort_mode: sort,
             deals_filter: deals,
