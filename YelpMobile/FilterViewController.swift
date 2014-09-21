@@ -8,43 +8,98 @@
 import UIKit
 
 
-
+/*
 let defaults = NSUserDefaults.standardUserDefaults()
-let KEY_SORT_INDEX = "SORT_INDEX"
-let KEY_DISTANCE = "DISTANCE"
-let KEY_DEALS = "DEALS_INDEX"
-let KEY_CATEGORIES = "CATEGORIES_ARRAY"
-let KEY_SUBCATEGORIES = "SUBCATEGORIES"
-
-var filter_sort_index = 0
-var filter_distance = 10.0
-var filter_deals = 0
-
+*/
 
 protocol FilterViewControllerDelegate {
     func applyFilter()
 }
 
-class FilterViewController: UIViewController {
+struct Section {
+    var title: String
+    var rowsDisplay: Array<String>
+    var rowsValue: Array<String>
+    var singleSelect: Bool
+    var selections: Array<Bool>
+    
+    init(title: String, rowsDisplay: Array<String>, rowsValue: Array<String>, singleSelect: Bool, selections: Array<Bool>)
+    {
+        self.title = title
+        self.rowsDisplay = rowsDisplay
+        self.rowsValue = rowsValue
+        self.singleSelect = singleSelect
+        self.selections = selections
+    }
+}
+
+class FilterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var filterTableView: UITableView!
+    
+    let section1 = Section(title: "Categories",
+        rowsDisplay: ["Restaurants", "Bars", "Coffee & Tea"],
+        rowsValue: ["restaurants", "bars", "coffee"],
+        singleSelect: false,
+        selections: [true, false, false]
+    )
+    
+    let section2 = Section(title: "Sort",
+        rowsDisplay: ["Best Match", "Distance", "Rating"],
+        rowsValue: ["0", "1", "2"],
+        singleSelect: true,
+        selections: [true, false, false]
+    )
+    
+    let section3 = Section(title: "Distance",
+        rowsDisplay: ["Auto", "0.3 miles", "1 mile", "5 miles", "10 miles"],
+        rowsValue: ["0", "482", "1609", "8047", "16093"],
+        singleSelect: true,
+        selections: [true, false, false, false, false]
+    )
     
     
-    let categories = ["restaurants", "bars"]
-    let subcategories: Array<Array<String>> = [
-          ["brazilian", "british", "cambodian", "caribbean", "chinese", "french", "italian", "japanese"],
-          ["beerbar", "cocktailbars", "sportsbars", "wine_bars"]
-        ]
-    let categories_display = ["Restaurants", "Bars"]
-    let subcategories_display: Array<Array<String>> = [
-        ["Brazilian", "British", "Cambodian", "Caribbean", "Chinese", "French", "Italian", "Japanese"],
-        ["Beer bar", "Cocktail Bars", "Sports Bars", "Wine Bars"]
-    ]
+    var sections: Array<Section>?
+    
     
     var filterDelegate : FilterViewControllerDelegate?
+    
+    override func loadView() {
+        sections = [section1, section2, section3]
+        super.loadView()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return sections!.count
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections![section].title
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sections![section].rowsDisplay.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.filterTableView.dequeueReusableCellWithIdentifier("YelpMobile.FilterTableCell") as FilterTableViewCell
+        cell.itemNameLabel.text = sections![indexPath.section].rowsDisplay[indexPath.row]
+        cell.itemSwitch.on = sections![indexPath.section].selections[indexPath.row]
+        //cell.itemSwitch.setOn(sections![indexPath.section].selections[indexPath.row], animated: true)
+        return cell;
+
+    }
+    
+    
+    
+    
+    
+    
     
     @IBAction func searchClicked(sender: AnyObject) {
       
@@ -58,5 +113,4 @@ class FilterViewController: UIViewController {
         
         self.navigationController?.popToRootViewControllerAnimated(true)    }
 
- 
 }

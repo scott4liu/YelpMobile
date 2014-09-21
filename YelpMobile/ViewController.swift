@@ -8,19 +8,11 @@
 
 import UIKit
 
-
-let kYelpConsumerKey = "vxKwwcR_NMQ7WaEiQBK_CA";
-let kYelpConsumerSecret = "33QCvh5bIF5jIHR5klQr7RtBDhQ";
-let kYelpToken = "uRcRswHFYa1VkDrGV6LAW2F8clGh5JHV";
-let kYelpTokenSecret = "mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
-
-let client = YelpAPIClient(consumerKey: kYelpConsumerKey, consumerSecret: kYelpConsumerSecret, accessToken: kYelpToken, accessSecret: kYelpTokenSecret)
-
-
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, FilterViewControllerDelegate {
     
     var bizArray : NSArray?
-
+    
+    var client: YelpAPIClient?;
     @IBOutlet weak var searchTextField: UITextField!
     
     @IBOutlet weak var yelpTableView: UITableView!
@@ -149,18 +141,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         NSLog("start search")
         
-        let category = "restaurants"
-        let sort = SORT_MODE.HIGHEST_RATED.toRaw()
-        let deals = DEAL_FILTER.NO.toRaw()
-        let location = "San Francisco"
-        let radius_meters = 20000
         
-        client.searchWithTerm(self.searchTextField.text,
-            category_filter: category,
-            sort_mode: sort,
-            deals_filter: deals,
-            radius_meters: radius_meters,
-            location: location,
+        
+        let filter = YelpFilter(categories: "restaurants", sort: "2", radius: "10000", deals: "0")
+        
+        let location = "San Francisco"
+        
+        
+        if (client == nil) {initYelpAPIClient()}
+        
+        client!.searchWithTermAndFilter(self.searchTextField.text, location: location, filter:filter,
             success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                 let data = response as Dictionary<String, AnyObject>
                 self.bizArray = data["businesses"] as? NSArray
@@ -181,6 +171,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func applyFilter(){
         searchYelp()
+    }
+    
+    func initYelpAPIClient()
+    {
+        let kYelpConsumerKey = "vxKwwcR_NMQ7WaEiQBK_CA";
+        let kYelpConsumerSecret = "33QCvh5bIF5jIHR5klQr7RtBDhQ";
+        let kYelpToken = "uRcRswHFYa1VkDrGV6LAW2F8clGh5JHV";
+        let kYelpTokenSecret = "mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
+        client = YelpAPIClient(consumerKey: kYelpConsumerKey, consumerSecret: kYelpConsumerSecret, accessToken: kYelpToken, accessSecret: kYelpTokenSecret)
+        
     }
 
 
