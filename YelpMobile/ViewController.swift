@@ -26,8 +26,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var yelpTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        /* does not work for ios 7
+        yelpTableView.estimatedRowHeight = 85
+        yelpTableView.rowHeight = UITableViewAutomaticDimension
+        */
         customizeSearchTextFld()
         
         searchYelp()
