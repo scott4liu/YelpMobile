@@ -13,7 +13,7 @@ let defaults = NSUserDefaults.standardUserDefaults()
 */
 
 protocol FilterViewControllerDelegate {
-    func applyFilter()
+    func applyFilter(filter: YelpFilter)
 }
 
 struct Section {
@@ -53,19 +53,53 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     
     let section3 = Section(title: "Distance",
         rowsDisplay: ["Auto", "0.3 miles", "1 mile", "5 miles", "10 miles"],
-        rowsValue: ["0", "482", "1609", "8047", "16093"],
+        rowsValue: ["", "482", "1609", "8047", "16093"],
         singleSelect: true,
         selections: [true, false, false, false, false]
     )
     
+    let section4 = Section(title: "Deals",
+        rowsDisplay: ["Deals On"],
+        rowsValue: ["1"],
+        singleSelect: true,
+        selections: [false]
+    )
+
+    
     
     var sections: Array<Section>?
+    
+    func buildFilterString(index: Int) -> String {
+        let section = sections![index]
+        var str : String? = nil;
+        for var i = 0; i < section.selections.count; ++i {
+            if (section.selections[i] ) {
+                if str != nil {
+                    str = str! + "," + section.rowsValue[i]
+                }
+                else {
+                    str = section.rowsValue[i]
+                }
+            }
+        }
+        
+        //println(str)
+        
+        return str ?? ""
+        
+    }
+    
+    func buildFilter() -> YelpFilter
+    {
+        
+        return YelpFilter(categories: buildFilterString(0), sort: buildFilterString(1), radius: buildFilterString(2), deals: buildFilterString(3))
+    }
     
     
     var filterDelegate : FilterViewControllerDelegate?
     
     override func loadView() {
-        sections = [section1, section2, section3]
+        sections = [section1, section2, section3, section4]
         super.loadView()
     }
     
@@ -95,6 +129,12 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
 
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        NSLog("didSelectRowAtIndexPath")
+        let selection = sections![indexPath.section].selections[indexPath.row];
+        sections![indexPath.section].selections[indexPath.row] = !selection;
+        self.filterTableView.reloadData()
+    }
     
     
     
@@ -103,7 +143,7 @@ class FilterViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBAction func searchClicked(sender: AnyObject) {
       
-        filterDelegate?.applyFilter()
+        filterDelegate?.applyFilter(buildFilter())
         
         self.navigationController?.popToRootViewControllerAnimated(true)
         

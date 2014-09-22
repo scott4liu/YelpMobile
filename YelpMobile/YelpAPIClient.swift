@@ -48,11 +48,24 @@ class YelpAPIClient: BDBOAuth1RequestOperationManager {
             var parameters = [
                 "term": term,
                 "location": location
-                , "category_filter": filter.categories
-                , "sort": filter.sort
-                , "deals_filter": filter.deals
-                , "radius_filter" : filter.radius
+                //, "category_filter": filter.categories
+                //, "sort": filter.sort
+                //, "deals_filter": filter.deals
+                //, "radius_filter" : filter.radius
             ]
+            if !filter.categories.isEmpty {
+                parameters.updateValue(filter.categories, forKey: "category_filter")
+            }
+            if !filter.sort.isEmpty{
+                parameters.updateValue(filter.sort, forKey: "sort")
+            }
+            if !filter.radius.isEmpty {
+                parameters.updateValue(filter.radius, forKey: "radius_filter")
+            }
+            if !filter.deals.isEmpty {
+                parameters.updateValue(filter.deals, forKey: "deals_filter")
+            }
+            
             return self.GET("search", parameters: parameters, success: success, failure: failure)
     }
 

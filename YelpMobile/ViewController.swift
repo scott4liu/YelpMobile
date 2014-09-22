@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, FilterViewControllerDelegate {
     
+    let location = "San Francisco"
+    
     var bizArray : NSArray?
     
     var client: YelpAPIClient?;
@@ -144,9 +146,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         let filter = YelpFilter(categories: "restaurants", sort: "2", radius: "10000", deals: "0")
+        applyFilter(filter)
         
-        let location = "San Francisco"
-        
+        /*
         
         if (client == nil) {initYelpAPIClient()}
         
@@ -159,6 +161,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 NSLog("error: "+error.description);
         }
+
+        */
         
     }
     
@@ -169,8 +173,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func applyFilter(){
-        searchYelp()
+    func applyFilter(filter: YelpFilter){
+        
+        if (client == nil) {initYelpAPIClient()}
+        
+        client!.searchWithTermAndFilter(self.searchTextField.text, location: location, filter:filter,
+            success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+                let data = response as Dictionary<String, AnyObject>
+                self.bizArray = data["businesses"] as? NSArray
+                
+                self.yelpTableView.reloadData()
+            }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                NSLog("error: "+error.description);
+        }
+
     }
     
     func initYelpAPIClient()
