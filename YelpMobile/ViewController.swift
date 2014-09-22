@@ -10,7 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, FilterViewControllerDelegate {
     
+    let kYelpConsumerKey = "vxKwwcR_NMQ7WaEiQBK_CA";
+    let kYelpConsumerSecret = "33QCvh5bIF5jIHR5klQr7RtBDhQ";
+    let kYelpToken = "uRcRswHFYa1VkDrGV6LAW2F8clGh5JHV";
+    let kYelpTokenSecret = "mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
+    
     let location = "San Francisco"
+    var filter : YelpFilter?
     
     var bizArray : NSArray?
     
@@ -73,8 +79,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             //println(business)
             //println(indexPath.row)
+            let i : Int = indexPath.row;
+            let name = business["name"] as String
             
-            cell.nameLabel.text = business["name"] as NSString
+            cell.nameLabel.text = String(i+1) + ". "+name
+            
             let image_url = business["image_url"] as NSString
             let rating_img_url_small = business["rating_img_url_small"] as NSString
             
@@ -140,30 +149,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func searchYelp()
     {
-        
-        NSLog("start search")
-        
-        
-        
-        let filter = YelpFilter(categories: "restaurants", sort: "2", radius: "10000", deals: "0")
-        applyFilter(filter)
-        
-        /*
-        
-        if (client == nil) {initYelpAPIClient()}
-        
-        client!.searchWithTermAndFilter(self.searchTextField.text, location: location, filter:filter,
-            success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-                let data = response as Dictionary<String, AnyObject>
-                self.bizArray = data["businesses"] as? NSArray
-                
-                self.yelpTableView.reloadData()
-            }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-                NSLog("error: "+error.description);
+        if (self.filter == nil) {
+            self.filter = FilterViewController.buildFilter()
+                //YelpFilter(categories: "restaurants", sort: "2", radius: "10000", deals: "0")
         }
-
-        */
-        
+        searchWithYelpClientAPI();
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -174,10 +164,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func applyFilter(filter: YelpFilter){
+        self.filter = filter
+        searchWithYelpClientAPI();
+    }
+    
+    func searchWithYelpClientAPI()
+    {
+        if (client == nil) {
+            client = YelpAPIClient(consumerKey: kYelpConsumerKey, consumerSecret: kYelpConsumerSecret, accessToken: kYelpToken, accessSecret: kYelpTokenSecret)
+        }
         
-        if (client == nil) {initYelpAPIClient()}
-        
-        client!.searchWithTermAndFilter(self.searchTextField.text, location: location, filter:filter,
+        client!.searchWithTermAndFilter(self.searchTextField.text, location: location, filter:filter!,
             success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                 let data = response as Dictionary<String, AnyObject>
                 self.bizArray = data["businesses"] as? NSArray
@@ -188,17 +185,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
 
     }
-    
-    func initYelpAPIClient()
-    {
-        let kYelpConsumerKey = "vxKwwcR_NMQ7WaEiQBK_CA";
-        let kYelpConsumerSecret = "33QCvh5bIF5jIHR5klQr7RtBDhQ";
-        let kYelpToken = "uRcRswHFYa1VkDrGV6LAW2F8clGh5JHV";
-        let kYelpTokenSecret = "mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
-        client = YelpAPIClient(consumerKey: kYelpConsumerKey, consumerSecret: kYelpConsumerSecret, accessToken: kYelpToken, accessSecret: kYelpTokenSecret)
-        
-    }
-
-
+ 
 }
 

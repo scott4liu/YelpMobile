@@ -190,20 +190,22 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YzY-Ps-YPy" id="9mH-w7-0Zv">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kEM-CB-O5r">
-                                                    <rect key="frame" x="245" y="4" width="51" height="31"/>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Best Matches" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9V-zl-m7D">
-                                                    <rect key="frame" x="28" y="9" width="162" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Matches" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9V-zl-m7D">
+                                                    <rect key="frame" x="28" y="9" width="89" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kEM-CB-O5r">
+                                                    <rect key="frame" x="245" y="4" width="51" height="31"/>
+                                                </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="kEM-CB-O5r" secondAttribute="trailing" constant="18" id="N8U-gt-unU"/>
-                                                <constraint firstItem="J9V-zl-m7D" firstAttribute="leading" secondItem="9mH-w7-0Zv" secondAttribute="leadingMargin" constant="20" id="ksu-NN-0Sh"/>
-                                                <constraint firstItem="kEM-CB-O5r" firstAttribute="centerY" secondItem="J9V-zl-m7D" secondAttribute="centerY" id="r8r-rD-Fyf"/>
+                                                <constraint firstItem="J9V-zl-m7D" firstAttribute="leading" secondItem="9mH-w7-0Zv" secondAttribute="leadingMargin" constant="20" id="1QV-GH-jF0"/>
+                                                <constraint firstItem="J9V-zl-m7D" firstAttribute="top" secondItem="9mH-w7-0Zv" secondAttribute="topMargin" constant="1" id="Vr3-OX-b94"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kEM-CB-O5r" secondAttribute="trailing" constant="18" id="iUj-mX-g4X"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="J9V-zl-m7D" secondAttribute="bottom" constant="0.5" id="sTn-bO-taO"/>
+                                                <constraint firstItem="kEM-CB-O5r" firstAttribute="centerY" secondItem="9mH-w7-0Zv" secondAttribute="centerY" id="yG5-cU-KFr"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
