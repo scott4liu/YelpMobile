@@ -231,7 +231,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="     Filters    " id="7rs-vd-r2z">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="f59-mf-8U2">
+                        <barButtonItem key="leftBarButtonItem" id="f59-mf-8U2">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ihx-jp-67g">
                                 <rect key="frame" x="-23" y="-15" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -244,7 +244,7 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Eqf-Dx-h7o">
+                        <barButtonItem key="rightBarButtonItem" id="Eqf-Dx-h7o">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BYt-78-5FW">
                                 <rect key="frame" x="-23" y="-15" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

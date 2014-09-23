@@ -23,15 +23,47 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func showBusinessesInMap() {
-        var address = "699 8th Street, San Francisco, CA  94103"
-        showAddressInMap(address)
         
-        address = "160 Spear St #1750, San Francisco, CA 94105"
-        showAddressInMap(address)
+        if self.bizArray != nil {
+            
+            
+            for (var i = 0; i < bizArray!.count; ++i ) {
+                
+                let business = self.bizArray![i] as NSDictionary
+                
+                var address : String = ""
+            
+                if let location = business["location"] as? NSDictionary {
+                    if let addr = location["address"] as? NSArray? {
+                        
+                        if addr!.count > 0 {
+                            address = (addr![0] as NSString) +  ", " + (location["city"] as NSString)
+                        } else {
+                            address = location["city"] as NSString
+                        }
+                    }
+                }
+                
+                let name = business["name"] as String
+                
+                let title = String(i+1) + ". "+name
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    self.showAddressInMap(address, title: title)
+                    
+                })
+                
+            
+            }
+            
+            
+            
+        }
         
     }
     
-    func showAddressInMap(address: String)
+    func showAddressInMap(address: String, title: String)
     {
         var geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address, {(placemarks: [AnyObject]!, error: NSError!) -> Void in
@@ -42,8 +74,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 
                 let a = MKPointAnnotation()
                 a.coordinate = p.coordinate
-                a.title = "1"
-                a.subtitle = "Thai Food"
+                a.title = title
+                //a.subtitle = subTitle
 
                 self.mapView.addAnnotation(a)
             }

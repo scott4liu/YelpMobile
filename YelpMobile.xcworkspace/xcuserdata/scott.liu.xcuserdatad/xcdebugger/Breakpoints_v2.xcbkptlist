@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpMobile/MapViewController.swift"
-            timestampString = "433129155.35252"
+            timestampString = "433172154.814317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "showAddressInMap(_:)"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "showAddressInMap(_:title:)"
             landmarkType = "5">
             <Locations>
                <Location
