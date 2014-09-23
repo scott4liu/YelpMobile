@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let location = "San Francisco"
     var filter : YelpFilter?
     
-    var bizArray : NSArray?
+    var bizArray : Array<NSDictionary>?
     
     var client: YelpAPIClient?;
     @IBOutlet weak var searchTextField: UITextField!
@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if self.bizArray != nil {
             
-          if let business = self.bizArray?[indexPath.row] as? NSDictionary {
+          if let business = self.bizArray?[indexPath.row] as NSDictionary? {
             
             //println(business)
             //println(indexPath.row)
@@ -87,17 +87,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             cell.nameLabel.text = String(i+1) + ". "+name
             
-            let image_url = business["image_url"] as NSString
-            let rating_img_url_small = business["rating_img_url_small"] as NSString
-            
+            let rating_img_url_small = business["rating_img_url_small"] as? NSString
+            if rating_img_url_small != nil {
+                cell.ratingImgView.setImageWithURL(NSURL(string: rating_img_url_small!))
+            }
             
             
             let layer = cell.bizImageView.layer;
             layer.masksToBounds=true
             layer.cornerRadius=10.0
 
-            cell.bizImageView.setImageWithURL(NSURL(string: image_url))
-            cell.ratingImgView.setImageWithURL(NSURL(string: rating_img_url_small))
+            let image_url = business["image_url"] as? NSString
+            
+            if image_url != nil {
+                cell.bizImageView.setImageWithURL(NSURL(string: image_url!))
+            }
             
             
             
@@ -133,6 +137,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             
             cell.categoryLabel.text = str
+            
+            
+            if (indexPath.row == (self.bizArray!.count-1) ) {
+                current_offset += default_limit
+                searchWithYelpClientAPI()
+            }
           }
         }
         
@@ -140,22 +150,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
 
+    var current_search_term : String = ""
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.endEditing(true)
+        current_search_term = textField.text
         searchYelp()
         return true
     }
     
     @IBAction func onTab(sender: AnyObject) {
         self.searchTextField.endEditing(true)
+        if (current_search_term != self.searchTextField.text) {
+            current_search_term = self.searchTextField.text
+            searchYelp()
+        }
     }
     
     func searchYelp()
     {
         if (self.filter == nil) {
             self.filter = FilterViewController.buildFilter()
-                //YelpFilter(categories: "restaurants", sort: "2", radius: "10000", deals: "0")
+            
         }
+        current_offset = 0
         searchWithYelpClientAPI();
     }
     
@@ -173,8 +191,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func applyFilter(filter: YelpFilter){
         self.filter = filter
+        current_offset = 0;
         searchWithYelpClientAPI();
     }
+    
+    let default_limit: Int = 20;
+    var current_offset: Int = 0;
     
     func searchWithYelpClientAPI()
     {
@@ -182,12 +204,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             client = YelpAPIClient(consumerKey: kYelpConsumerKey, consumerSecret: kYelpConsumerSecret, accessToken: kYelpToken, accessSecret: kYelpTokenSecret)
         }
         
-        client!.searchWithTermAndFilter(self.searchTextField.text, location: location, filter:filter!,
+        client!.searchWithTermAndFilter(self.searchTextField.text, limit: default_limit, offset: current_offset, location: location, filter:filter!,
             success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
                 let data = response as Dictionary<String, AnyObject>
-                self.bizArray = data["businesses"] as? NSArray
+                let bizData = (data["businesses"] as? NSArray) as? Array<NSDictionary>
+                
+                if self.current_offset == 0 {
+                    self.bizArray = bizData as Array<NSDictionary>?
+                    self.yelpTableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated:false)
+                } else if (bizData != nil)
+                {
+                    for d in bizData! {
+                        self.bizArray?.append(d)
+                    }
+                }
                 
                 self.yelpTableView.reloadData()
+                //if self.current_offset == 0 {
+                    //self.yelpTableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated:true)
+               // }
             }) { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 NSLog("error: "+error.description);
         }

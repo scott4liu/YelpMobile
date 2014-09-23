@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpMobile/ViewController.swift"
-            timestampString = "433092841.013633"
+            timestampString = "433181700.765115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -107,6 +107,52 @@
                   startingLineNumber = "39"
                   endingLineNumber = "39"
                   offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YelpMobile/ViewController.swift"
+            timestampString = "433181700.765115"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "searchWithYelpClientAPI()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YelpMobile.ViewController.(searchWithYelpClientAPI (YelpMobile.ViewController) -&gt; () -&gt; ()).(closure #1)"
+                  moduleName = "YelpMobile"
+                  urlString = "file:///Users/scott.liu/git/ios/YelpMobile/YelpMobile/ViewController.swift"
+                  timestampString = "433179414.5841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "1190">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YelpMobile.ViewController.(searchWithYelpClientAPI (YelpMobile.ViewController) -&gt; () -&gt; ()).(closure #1)"
+                  moduleName = "YelpMobile"
+                  urlString = "file:///Users/scott.liu/git/ios/YelpMobile/YelpMobile/ViewController.swift"
+                  timestampString = "433179414.584315"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "212"
+                  endingLineNumber = "212"
+                  offsetFromSymbolStart = "1318">
                </Location>
             </Locations>
          </BreakpointContent>
