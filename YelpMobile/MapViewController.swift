@@ -20,48 +20,32 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         initMap();
         showBusinessesInMap();
-        
-       /*
-        var pointAnnotation = MKPointAnnotation()
-        pointAnnotation.coordinate = loc;
-        pointAnnotation.title = "1"
-        pointAnnotation.subtitle = "Thai Food"
-        
-        self.mapView.addAnnotation(pointAnnotation)
-       */
-        // Do any additional setup after loading the view.
     }
     
-    func showBusinessesInMap()
-    {
+    func showBusinessesInMap() {
         var address = "699 8th Street, San Francisco, CA  94103"
+        showAddressInMap(address)
+        
+        address = "160 Spear St #1750, San Francisco, CA 94105"
+        showAddressInMap(address)
+        
+    }
+    
+    func showAddressInMap(address: String)
+    {
         var geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address, {(placemarks: [AnyObject]!, error: NSError!) -> Void in
-            //println(placemarks)
-            //println(error)
             
             if let placemark = placemarks?[0] as? CLPlacemark {
-                println("placemark: ")
-                println(placemark)
-           
-                let a = MKPlacemark(placemark: placemark)
+            
+                let p = MKPlacemark(placemark: placemark)
+                
+                let a = MKPointAnnotation()
+                a.coordinate = p.coordinate
+                a.title = "1"
+                a.subtitle = "Thai Food"
+
                 self.mapView.addAnnotation(a)
-                
-                /*
-                let loc = placemark.location
-                
-                println(loc.coordinate.latitude)
-                println(loc.coordinate.longitude)
-                
-                let loc2D = CLLocationCoordinate2DMake(loc.coordinate.latitude, loc.coordinate.longitude)
-                
-                var pointAnnotation = MKPointAnnotation()
-                pointAnnotation.coordinate = loc2D;
-                pointAnnotation.title = "1"
-                pointAnnotation.subtitle = "Thai Food"
-                
-                self.mapView.addAnnotation(pointAnnotation)
-                */
             }
         })
         
@@ -74,8 +58,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var center_longitude: CLLocationDegrees = -122.419416
         var center_location : CLLocationCoordinate2D = CLLocationCoordinate2DMake(center_latitude, center_longitude)
         
-        var latitudeDelta : CLLocationDegrees = 0.05
-        var longitudeDelta : CLLocationDegrees = 0.05
+        var latitudeDelta : CLLocationDegrees = 0.1
+        var longitudeDelta : CLLocationDegrees = 0.1
         var span: MKCoordinateSpan = MKCoordinateSpanMake(latitudeDelta, longitudeDelta)
         
         var region : MKCoordinateRegion = MKCoordinateRegionMake(center_location, span)

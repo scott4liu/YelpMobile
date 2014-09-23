@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YelpMobile/MapViewController.swift"
-            timestampString = "433121731.730237"
+            timestampString = "433129155.35252"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "showBusinessesInMap()"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "showAddressInMap(_:)"
             landmarkType = "5">
             <Locations>
                <Location
@@ -109,22 +109,6 @@
                   offsetFromSymbolStart = "22">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YelpMobile/MapViewController.swift"
-            timestampString = "433123083.218197"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "showBusinessesInMap()"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
