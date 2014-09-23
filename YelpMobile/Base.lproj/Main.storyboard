@@ -280,14 +280,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="anS-8a-bdF">
-                                <rect key="frame" x="0.0" y="72" width="328" height="451"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="anS-8a-bdF">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <connections>
                                     <outlet property="delegate" destination="MRw-k7-39F" id="e2S-xL-H1Z"/>
                                 </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="anS-8a-bdF" firstAttribute="leading" secondItem="WJT-Ib-rBK" secondAttribute="leading" id="Slp-gg-Nny"/>
+                            <constraint firstAttribute="trailing" secondItem="anS-8a-bdF" secondAttribute="trailing" id="U2d-og-IRF"/>
+                            <constraint firstItem="OMF-lx-hfn" firstAttribute="top" secondItem="anS-8a-bdF" secondAttribute="bottom" id="cpF-IU-ylg"/>
+                            <constraint firstItem="anS-8a-bdF" firstAttribute="top" secondItem="Bx0-rv-40d" secondAttribute="bottom" id="n64-86-JyY"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>

@@ -164,6 +164,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let filterController = segue.destinationViewController as FilterViewController
             filterController.filterDelegate = self;
         }
+        else if segue.identifier == "SegueListToMap" {
+            let filterController = segue.destinationViewController as MapViewController
+            filterController.bizArray = self.bizArray
+        }
+
     }
     
     func applyFilter(filter: YelpFilter){
