@@ -73,7 +73,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = self.yelpTableView.dequeueReusableCellWithIdentifier("YelpMobile.TableViewCell") as YelpTableViewCell
         
         if self.bizArray != nil {
@@ -137,6 +140,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             
             cell.categoryLabel.text = str
+            
+            if let deals = business["deals"] as? NSArray {
+                cell.dealsImageView.image = UIImage(named: "hotdeals.jpeg")
+            } else {
+                cell.dealsImageView.image = nil
+            }
             
             
             if (indexPath.row == (self.bizArray!.count-1) ) {

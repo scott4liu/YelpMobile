@@ -10,6 +10,7 @@ import UIKit
 
 class YelpTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var dealsImageView: UIImageView!
     @IBOutlet weak var reviewsLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!

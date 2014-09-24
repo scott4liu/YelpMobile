@@ -84,18 +84,27 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bJH-dC-nPO">
+                                                    <rect key="frame" x="276" y="8" width="36" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="NoX-Af-gfh"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="jPS-G1-dRD" secondAttribute="bottom" constant="8" id="3ED-QI-Jkj"/>
+                                                <constraint firstItem="bJH-dC-nPO" firstAttribute="trailing" secondItem="iBC-XR-KlB" secondAttribute="trailingMargin" id="8kA-Nc-9jf"/>
                                                 <constraint firstItem="X3O-o6-0uu" firstAttribute="top" secondItem="RwU-Bj-TzG" secondAttribute="bottom" constant="2" id="IFH-o4-hv5"/>
                                                 <constraint firstItem="jPS-G1-dRD" firstAttribute="top" secondItem="iBC-XR-KlB" secondAttribute="top" constant="8" id="K81-LJ-4Vp"/>
                                                 <constraint firstItem="X3O-o6-0uu" firstAttribute="leading" secondItem="RwU-Bj-TzG" secondAttribute="leading" id="Ne4-Tu-38U"/>
                                                 <constraint firstItem="C8y-Zt-9LE" firstAttribute="top" secondItem="iBC-XR-KlB" secondAttribute="top" constant="8" id="PIG-qP-TkD"/>
                                                 <constraint firstItem="CbD-4v-lpp" firstAttribute="centerY" secondItem="RwU-Bj-TzG" secondAttribute="centerY" constant="-0.5" id="QzO-eG-GUH"/>
                                                 <constraint firstItem="RwU-Bj-TzG" firstAttribute="leading" secondItem="C8y-Zt-9LE" secondAttribute="leading" id="UhT-FG-i2n"/>
+                                                <constraint firstItem="bJH-dC-nPO" firstAttribute="top" secondItem="iBC-XR-KlB" secondAttribute="topMargin" id="WmO-wB-cuG"/>
                                                 <constraint firstItem="CbD-4v-lpp" firstAttribute="leading" secondItem="RwU-Bj-TzG" secondAttribute="trailing" constant="8" id="Y01-uz-w6z"/>
                                                 <constraint firstItem="RwU-Bj-TzG" firstAttribute="top" secondItem="C8y-Zt-9LE" secondAttribute="bottom" constant="2" id="dQD-n0-7pb"/>
                                                 <constraint firstItem="jPS-G1-dRD" firstAttribute="leading" secondItem="iBC-XR-KlB" secondAttribute="leading" constant="8" id="jJr-O7-BSd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bJH-dC-nPO" secondAttribute="bottom" constant="36" id="ogS-Cn-bYV"/>
                                                 <constraint firstItem="W4c-KH-zy8" firstAttribute="leading" secondItem="X3O-o6-0uu" secondAttribute="leading" id="sxt-hi-eVK"/>
                                                 <constraint firstItem="W4c-KH-zy8" firstAttribute="top" secondItem="X3O-o6-0uu" secondAttribute="bottom" constant="-3" id="uje-8B-yg0"/>
                                                 <constraint firstItem="C8y-Zt-9LE" firstAttribute="leading" secondItem="jPS-G1-dRD" secondAttribute="trailing" constant="8" id="yre-4i-S5d"/>
@@ -105,6 +114,7 @@
                                             <outlet property="addressLabel" destination="X3O-o6-0uu" id="cZS-GZ-QgX"/>
                                             <outlet property="bizImageView" destination="jPS-G1-dRD" id="ybd-o7-5Y5"/>
                                             <outlet property="categoryLabel" destination="W4c-KH-zy8" id="9Dy-WT-9Pk"/>
+                                            <outlet property="dealsImageView" destination="bJH-dC-nPO" id="doh-ay-GJx"/>
                                             <outlet property="nameLabel" destination="C8y-Zt-9LE" id="Ho4-p0-SQM"/>
                                             <outlet property="ratingImgView" destination="RwU-Bj-TzG" id="dg6-XR-U6c"/>
                                             <outlet property="reviewsLabel" destination="CbD-4v-lpp" id="frJ-9X-tHp"/>
@@ -164,7 +174,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="501" y="-1572"/>
+            <point key="canvasLocation" x="551" y="-1572"/>
         </scene>
         <!--Filters-->
         <scene sceneID="8af-cD-dT6">
@@ -266,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNX-Wo-VNt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904" y="-1572"/>
+            <point key="canvasLocation" x="934" y="-1572"/>
         </scene>
         <!--Map-->
         <scene sceneID="PpT-Bg-WTe">

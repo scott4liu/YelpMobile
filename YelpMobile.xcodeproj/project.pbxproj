@@ -16,6 +16,7 @@
 		7A26E7C719CEB61E0038B993 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A26E7C619CEB61E0038B993 /* MapKit.framework */; };
 		7A26E7C919CEB69D0038B993 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A26E7C819CEB69D0038B993 /* MapViewController.swift */; };
 		7A26E7CF19CF4B4F0038B993 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A26E7CE19CF4B4F0038B993 /* FilterTableViewCell.swift */; };
+		7A26E80119D246730038B993 /* hotdeals.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7A26E80019D246730038B993 /* hotdeals.jpeg */; };
 		7AB005B619CBFF2F00DFFC59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */; };
 		7AB005B819CBFF2F00DFFC59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB005B719CBFF2F00DFFC59 /* ViewController.swift */; };
 		7AB005BB19CBFF2F00DFFC59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB005B919CBFF2F00DFFC59 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		7A26E7C619CEB61E0038B993 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7A26E7C819CEB69D0038B993 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7A26E7CE19CF4B4F0038B993 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		7A26E80019D246730038B993 /* hotdeals.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hotdeals.jpeg; path = ../../../../Desktop/hotdeals.jpeg; sourceTree = "<group>"; };
 		7AB005B019CBFF2F00DFFC59 /* YelpMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YelpMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB005B419CBFF2F00DFFC59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AB005B519CBFF2F00DFFC59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		7AB005B319CBFF2F00DFFC59 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7A26E80019D246730038B993 /* hotdeals.jpeg */,
 				7A26E7C019CDE6880038B993 /* searchIcon2.png */,
 				7A1D256F19CC04A6003580F0 /* Default-568h@2x.png */,
 				7AB005B419CBFF2F00DFFC59 /* Info.plist */,
@@ -262,6 +265,7 @@
 				7AB005BB19CBFF2F00DFFC59 /* Main.storyboard in Resources */,
 				7A26E7C119CDE6880038B993 /* searchIcon2.png in Resources */,
 				7A1D257019CC04A6003580F0 /* Default-568h@2x.png in Resources */,
+				7A26E80119D246730038B993 /* hotdeals.jpeg in Resources */,
 				7AB005C019CBFF2F00DFFC59 /* LaunchScreen.xib in Resources */,
 				7AB005BD19CBFF2F00DFFC59 /* Images.xcassets in Resources */,
 			);
