@@ -1,4 +1,4 @@
-# YelpMobile - Yelp Movile Client
+# YelpMobile - Yelp Mobile Client
 
 This is an iphone application for searching local resturants using the [Yelp API](http://www.yelp.com/developers/documentation/v2/search_api). 
 
